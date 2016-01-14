@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Learn handle data with js</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="public/css/app.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="page-header">
+            Person
+            <small id="peopleCount"></small>
+        </h1>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Username</th>
+                    <th>Gender</th>
+                    <th>Age<span id="meanAge"></span></th>
+                    <th>#</th>
+                </tr>
+            </thead>
+
+            <tbody id="peopleList">
+            </tbody>
+        </table>
+    </div>
+
+    <script type="text/template" id="template">
+        <tr>
+            <td>{{ id }}</td>
+            <td>{{ username }}</td>
+            <td>{{ gender }}</td>
+            <td>{{ age }}</td>
+            <td class="btn--delete" onclick="deletePerson({{ id }})">&#10007;</td>
+        </tr>
+    </script>
+
+    <script type="text/json" id="peopleData">
+    {
+        "people": [
+            {"id": 1,"gender": "Male","username": "Juan","age": 18},
+            {"id": 2,"gender": "Male","username": "Steve","age": 10},
+            {"id": 3,"gender": "Female","username": "Denise","age": 17},
+            {"id": 4,"gender": "Male","username": "Keith","age": 19},
+            {"id": 5,"gender": "Male","username": "Edward","age": 21},
+            {"id": 6,"gender": "Female","username": "Lori","age": 31},
+            {"id": 7,"gender": "Female","username": "Margaret","age": 27},
+            {"id": 8,"gender": "Male","username": "Timothy","age": 20},
+            {"id": 9,"gender": "Female","username": "Phyllis","age": 32},
+            {"id": 10,"gender": "Female","username": "Sharon","age": 21},
+            {"id": 11,"gender": "Male","username": "Charles","age": 19},
+            {"id": 12,"gender": "Female","username": "Emily","age": 12},
+            {"id": 13,"gender": "Male","username": "Dennis","age": 44},
+            {"id": 14,"gender": "Male","username": "Eugene","age": 26},
+            {"id": 15,"gender": "Male","username": "Alan","age": 20},
+            {"id": 16,"gender": "Female","username": "Julia","age": 28},
+            {"id": 17,"gender": "Male","username": "Ernest","age": 12},
+            {"id": 18,"gender": "Female","username": "Ruby","age": 14},
+            {"id": 19,"gender": "Male","username": "Timothy","age": 22},
+            {"id": 20,"gender": "Male","username": "Lawrence","age": 32}
+        ]
+    }
+    </script>
+    <script src="public/js/app.js"></script>
+</body>
+</html>
